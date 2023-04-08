@@ -9,10 +9,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class adapter(val con: Context, val data:List<data_feelings>): RecyclerView.Adapter<adapter.Link>(){
+
+class adapter(val con: Context, val data:List<data_movie>): RecyclerView.Adapter<adapter.Link>(){
     class Link(itemView: View): RecyclerView.ViewHolder(itemView) {
         val img: ImageView =  itemView.findViewById(R.id.img)
-        val title: TextView = itemView.findViewById(R.id.title)
+        val title: TextView = itemView.findViewById(R.id.title2)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Link {
