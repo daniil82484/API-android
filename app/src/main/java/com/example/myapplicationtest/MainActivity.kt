@@ -25,27 +25,30 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-    //fun login(view: View) {
-    //    if(email.text.toString().isNotEmpty() && password.text.toString().isNotEmpty()){
-    //        val log = MyRetrofit().getRetrofit()
-    //        val getApi = log.create(ApiRet::class.java)
-    //        var hashMap: HashMap<String,String> = HashMap<String,String>()
-    //        hashMap.put("email", email.text.toString())
-    //        hashMap.put("password", password.text.toString())
-    //        val log_call:retrofit2.Call<login> = getApi.getAuth(hashMap)
-    //        log_call.enqueue(object : retrofit2.Callback<login>{
-    //            override fun onResponse(call: Call<login>, response: Response<login>) {
-    //                if (response.isSuccessful){
-    //                    val intent = Intent(this@MainActivity, MainActivity2::class.java)
-    //                    startActivity(intent)
-    //                }
-    //            }
-    //            override fun onFailure(call: Call<login>, t: Throwable) {
-    //                Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
-    //            }
-//
-    //        })
-//
-    //    }
-    //}
+    fun login(view: View) {
+        if(email.text.toString().isNotEmpty() && password.text.toString().isNotEmpty()){
+            val log = MyRetrofit().getRetrofit()
+            val getApi = log.create(ApiRet::class.java)
+            val hashMap: HashMap<String, String> = HashMap()
+            hashMap.put("email", email.text.toString())
+            hashMap.put("password", password.text.toString())
+            val log_call: retrofit2.Call<login> = getApi.getAuth(hashMap)
+            log_call.enqueue(object : retrofit2.Callback<login>{
+                override fun onResponse(call: Call<login>, response: Response<login>) {
+                    if (response.isSuccessful){
+                        val intent = Intent(this@MainActivity, MainActivity4::class.java)
+                        startActivity(intent)
+                    }
+                }
+                override fun onFailure(call: Call<login>, t: Throwable) {
+                    Toast.makeText(this@MainActivity, "Такого пользователя в системе нет", Toast.LENGTH_SHORT).show()
+                }
+
+            })
+
+        }
+        else{
+            Toast.makeText(this@MainActivity, "Ошибка ввода", Toast.LENGTH_SHORT).show()
+        }
+    }
 }

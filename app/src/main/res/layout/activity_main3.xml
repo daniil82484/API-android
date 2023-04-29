@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2"
+    tools:context=".MainActivity3"
     android:background="@color/purple_200">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/res"
+        android:id="@+id/res2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item" />
+        tools:listitem="@layout/item3" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn"

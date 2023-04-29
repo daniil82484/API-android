@@ -10,23 +10,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 
-class adapter(val con: Context, val data:List<data_movie>): RecyclerView.Adapter<adapter.Link>(){
-    class Link(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val img: ImageView =  itemView.findViewById(R.id.img)
-        //val bio: TextView = itemView.findViewById(R.id.bio)
+class adapter2(val con:Context, val data: List<data_product>):RecyclerView.Adapter<adapter2.Link>(){
+    class Link(itemView:View):RecyclerView.ViewHolder(itemView) {
+        val title:TextView=itemView.findViewById(R.id.name)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Link {
-        val root = LayoutInflater.from(con).inflate(R.layout.item, parent, false)
+        val root = LayoutInflater.from(con).inflate(R.layout.item3,parent,false)
         return Link(root)
     }
 
     override fun onBindViewHolder(holder: Link, position: Int) {
-        Glide.with(con).load(data[position].imageurl).into(holder.img)
-        //holder.bio.setText(data[position].bio)
+        holder.title.setText(data[position].title)
     }
 
     override fun getItemCount(): Int {
-        return data.size
+        return 3 //data.size
     }
 }
