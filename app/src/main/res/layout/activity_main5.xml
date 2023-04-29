@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity5">
+    tools:context=".MainActivity5"
+    android:background="@color/purple_700">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/res3"
@@ -17,6 +18,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item3" />
+        tools:listitem="@layout/item2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
